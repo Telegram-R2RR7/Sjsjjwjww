@@ -36,7 +36,7 @@ from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError, UnMuteN
 from pytgcalls.types import AudioPiped, HighQualityAudio
 from youtube_search import YoutubeSearch
 
-from config import DURATION_LIMIT
+from config import DURATION_LIMIT, YAFA_CHANNEL, CHANNEL_SUDO, YAFA_NAME
 from FallenMusic import (
     ASS_ID,
     ASS_MENTION,
@@ -59,12 +59,32 @@ from FallenMusic.Helpers.queue import put
 from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
 
 
+
+force_btn = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(   
+              text=f"{YAFA_NAME}", url=f"{YAFA_CHANNEL}",)                        
+        ],        
+    ]
+) 
+async def check_is_joined(message):    
+    try:
+        userid = message.from_user.id
+        status = await app.get_chat_member(f"{CHANNEL_SUDO}", userid)
+        return True
+    except Exception:
+        await message.reply_text("**⋄  عليك الاشتراك في قناة البوت اولاً :**",reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
+        return False
+
 @app.on_message(
     filters.command(["play", "شغل", "تشغيل"]) | filters.command(["تشغيل","شغل","ش"],prefixes= ["/", "!","","#"])
     & ~filters.forwarded
     & ~filters.via_bot
 )
 async def play(_, message: Message):
+    if not await check_is_joined(message):
+        return
     fallen = await message.reply_text("⋄ جارٍ التحميل ⚡")
     try:
         await message.delete()
