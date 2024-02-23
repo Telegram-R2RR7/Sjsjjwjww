@@ -41,6 +41,21 @@
         "value": "",
         "required": true
       },
+      "CHANNEL_SUDO": {
+        "description": "ضع يوزر قناة الاشتراك الاجباري بدون @",
+        "value": "",
+        "required": true
+      },
+      "YAFA_NAME": {
+        "description": "ضع اسم قناة الاشتراك الاجباري",
+        "value": "",
+        "required": true
+      },
+      "YAFA_CHANNEL": {
+        "description": "ضغ رابط قناة الاشتراك الاجباري",
+        "value": "",
+        "required": true
+      }, 
       "SUPPORT_CHAT": {
         "description": "ضـع رابـط جـروب الـدعـم",
         "value": "https://t.me/PT_XV",
