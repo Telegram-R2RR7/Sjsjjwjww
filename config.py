@@ -25,15 +25,15 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "5627420357").split()))
 
 
 CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", "UUU10K"
+    "CHANNEL_SUDO", None
 )
 
 YAFA_NAME = getenv(
-    "YAFA_NAME", "- سورس امير الموسوي ."
+    "YAFA_NAME", None
 )
 
 YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", "https://t.me/UUU10K"
+   " YAFA_CHANNEL", None
 )
 
 
