@@ -39,7 +39,7 @@ async def inline_query_handler(_, query):
             await app.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text="اكتب آي حاجة هبحث عنها في اليوتيوب ⚡",
+                switch_pm_text="اكتب آي شي للبحث عنه في اليوتيوب ⚡",
                 cache_time=10,
             )
         except:
@@ -61,7 +61,7 @@ async def inline_query_handler(_, query):
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʏᴏᴜᴛᴜʙᴇ •",
+                            text="• مشاهدة •",
                             url=link,
                         )
                     ],
