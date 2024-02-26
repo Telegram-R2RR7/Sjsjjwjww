@@ -32,6 +32,7 @@ from FallenMusic import (
     BOT_USERNAME,
     LOGGER,
     app,
+    SUDOERS, 
     fallendb,
     pytgcalls,
 )
@@ -109,7 +110,7 @@ async def admin_cbs(_, query: CallbackQuery):
     elif data == "pause_cb":
         if not await is_streaming(query.message.chat.id):
             return await query.answer(
-                "ᴅɪᴅ ʏᴏᴜ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ʀᴇsᴜᴍᴇᴅ ᴛʜᴇ sᴛʀᴇᴀᴍ ?", show_alert=True
+                "لقد قمت بذالك هل نسيت ?", show_alert=True
             )
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
@@ -137,7 +138,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"⋄ تخطي الاغنيه 🥺\n \n⋄ بواسطة : {query.from_user.mention} 🥀\n\n**⋄ لا يوجد سوره تالية في قائمة الانتظار ** {query.message.chat.title}, **ترك دردشة الفيديو**",
+                    text=f"⋄ تخطي الموسيقى 🥺\n \n⋄ بواسطة : {query.from_user.mention} 🥀\n\n**⋄ لا يوجد سوره تالية في قائمة الانتظار ** {query.message.chat.title}, **ترك دردشة الفيديو**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -229,10 +230,34 @@ async def open_hmenu(_, query: CallbackQuery):
 
     if cb == "help":
         await query.edit_message_text(HELP_TEXT, reply_markup=keyboard)
-    elif cb == "sudo":
-        await query.edit_message_text(HELP_SUDO, reply_markup=keyboard)
-    elif cb == "owner":
-        await query.edit_message_text(HELP_DEV, reply_markup=keyboard)
+    if cb == "sudo":
+        if CallbackQuery.from_user.id not in SUDOERS:
+            return await CallbackQuery.answer(
+                "هذا الأمر فقط للمطورين !!", show_alert=True
+            )
+        else:
+            await CallbackQuery.edit_message_text(
+                HELP_SUDO, reply_markup=keyboard
+            )
+            return await CallbackQuery.answer()
+    try:
+        await CallbackQuery.answer()
+    except:
+        pass
+    if cb == "owner":
+        if CallbackQuery.from_user.id not in SUDOERS:
+            return await CallbackQuery.answer(
+                "هذا الأمر فقط للمالك !!", show_alert=True
+            )
+        else:
+            await CallbackQuery.edit_message_text(
+                HELP_DEV, reply_markup=keyboard
+            )
+            return await CallbackQuery.answer()
+    try:
+        await CallbackQuery.answer()
+    except:
+        pass
 
 
 @app.on_callback_query(filters.regex("fallen_home"))
