@@ -231,31 +231,31 @@ async def open_hmenu(_, query: CallbackQuery):
     if cb == "help":
         await query.edit_message_text(HELP_TEXT, reply_markup=keyboard)
     if cb == "sudo":
-        if CallbackQuery.from_user.id not in SUDOERS:
-            return await CallbackQuery.answer(
+        if query.from_user.id not in SUDOERS:
+            return await query.answer(
                 "هذا الأمر فقط للمطورين !!", show_alert=True
             )
         else:
-            await CallbackQuery.edit_message_text(
+            await query.edit_message_text(
                 HELP_SUDO, reply_markup=keyboard
             )
-            return await CallbackQuery.answer()
+            return await query.answer()
     try:
-        await CallbackQuery.answer()
+        await query.answer()
     except:
         pass
     if cb == "owner":
-        if CallbackQuery.from_user.id not in SUDOERS:
-            return await CallbackQuery.answer(
+        if query.from_user.id not in SUDOERS:
+            return await query.answer(
                 "هذا الأمر فقط للمالك !!", show_alert=True
             )
         else:
-            await CallbackQuery.edit_message_text(
+            await query.edit_message_text(
                 HELP_DEV, reply_markup=keyboard
             )
-            return await CallbackQuery.answer()
+            return await query.answer()
     try:
-        await CallbackQuery.answer()
+        await query.answer()
     except:
         pass
 
