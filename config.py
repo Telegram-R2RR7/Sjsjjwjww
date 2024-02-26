@@ -18,22 +18,22 @@ START_IMG = getenv("START_IMG", "https://telegra.ph/file/c27f34d40b4664d1a4db7.j
 
 SESSION = getenv("SESSION", None)
 
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/PT_XV")
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/UUU10K")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Exppower")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/K8XXX")
 
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "5627420357").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "2038302618").split()))
 
 
 CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", None
+    "CHANNEL_SUDO", "K8XXX"
 )
 
 YAFA_NAME = getenv(
-    "YAFA_NAME", None
+    "YAFA_NAME", "سورس باور"
 )
 
 YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", None
+   " YAFA_CHANNEL", "https://t.me/K8XXX" 
 )
 
 
