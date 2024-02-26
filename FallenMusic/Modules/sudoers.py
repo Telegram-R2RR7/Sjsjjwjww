@@ -36,7 +36,7 @@ async def sudoadd(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "⋄ اعمل ريب عليه او اكتب الايدي او يوزره جنب الامر"
+                "⋄ اعمل رد عليه او اكتب الايدي او يوزره جنب الامر"
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
@@ -48,7 +48,7 @@ async def sudoadd(_, message: Message):
             SUDOERS.add(int(user.id))
             await message.reply_text(f"تم {user.mention} اضافته مطور.")
         except:
-            return await message.reply_text("⋄ انا فشلت في دي كمان.")
+            return await message.reply_text("⋄ انا فشلت في الرفع.")
 
     if message.reply_to_message.from_user.id in SUDOERS:
         return await message.reply_text(
