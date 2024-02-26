@@ -13,8 +13,8 @@ DURATION_LIMIT = int(getenv("DURATION_LIMIT", "360"))
 
 OWNER_ID = int(getenv("OWNER_ID"))
 
-PING_IMG = getenv("PING_IMG", "https://telegra.ph/file/c27f34d40b4664d1a4db7.jpg")
-START_IMG = getenv("START_IMG", "https://telegra.ph/file/c27f34d40b4664d1a4db7.jpg")
+PING_IMG = getenv("PING_IMG", "https://telegra.ph/file/0078467a38a2386dda832.jpg")
+START_IMG = getenv("START_IMG", "https://telegra.ph/file/0078467a38a2386dda832.jpg")
 
 SESSION = getenv("SESSION", None)
 
@@ -37,4 +37,4 @@ YAFA_CHANNEL = getenv(
 )
 
 
-FAILED = "https://telegra.ph/file/c27f34d40b4664d1a4db7.jpg"
+FAILED = "https://telegra.ph/file/0078467a38a2386dda832.jpg"
