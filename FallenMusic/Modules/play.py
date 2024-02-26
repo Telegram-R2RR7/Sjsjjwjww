@@ -96,7 +96,7 @@ async def play(_, message: Message):
             get = await app.get_chat_member(message.chat.id, ASS_ID)
         except ChatAdminRequired:
             return await fallen.edit_text(
-                f"⋄ اديني صلاحية الاضافة علشان اضيف المساعد {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
+                f"⋄ اعطني صلاحية الاضافة حتى اضيف المساعد {BOT_NAME} في {message.chat.title}."
             )
         if get.status == ChatMemberStatus.BANNED:
             unban_butt = InlineKeyboardMarkup(
@@ -125,7 +125,7 @@ async def play(_, message: Message):
                 invitelink = await app.export_chat_invite_link(message.chat.id)
             except ChatAdminRequired:
                 return await fallen.edit_text(
-                    f"⋄ اديني صلاحية الاضافة علشان اضيف المساعد {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
+                    f"⋄ اعطني صلاحية الاضافة حتى اضيف المساعد {BOT_NAME} في {message.chat.title}."
                 )
             except Exception as ex:
                 return await fallen.edit_text(
@@ -146,7 +146,7 @@ async def play(_, message: Message):
             pass
         except Exception as ex:
             return await fallen.edit_text(
-                f"فشلت الدعوة {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}.\n\n**السبب :** `{ex}`"
+                f"فشلت الدعوة {BOT_NAME} المساعد في {message.chat.title}.\n\n**السبب :** `{ex}`"
             )
         try:
             await app2.resolve_peer(invitelink)
@@ -163,7 +163,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"⋄ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل اغنيه تانية {BOT_NAME}."
+                f"⋄ فشل التشغيل بسبب ان الموسيقى طويلة {DURATION_LIMIT} شغل موسيقى تانية {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -192,12 +192,12 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"⋄ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل اغنيه تانية {BOT_NAME}.."
+                f"⋄ فشل التشغيل بسبب ان الموسيقى طويلة {DURATION_LIMIT} شغل موسيقى تانية {BOT_NAME}.."
             )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
-            return await fallen.edit_text("⋄ اكتب اسم الاغنيه اللي عايز تشغلها")
+            return await fallen.edit_text("⋄ اكتب اسم الموسيقى التي تريد تشغيلها")
         await fallen.edit_text("⋄ جارٍ التشغيل ⚡")
         query = message.text.split(None, 1)[1]
         try:
@@ -218,7 +218,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit(
-                f"⋄ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل اغنيه تانية {BOT_NAME}.."
+                f"⋄ فشل التشغيل بسبب ان الموسيقى طويلة {DURATION_LIMIT} شغل موسيقى تانية {BOT_NAME}.."
             )
         file_path = audio_dl(url)
 
@@ -258,7 +258,7 @@ async def play(_, message: Message):
             )
         except TelegramServerError:
             return await fallen.edit_text(
-                "⋄ حدثت مشكلة جرب اقفل الكول وافتح تاني"
+                "⋄ حدثت مشكلة جرب اقفل المكالمة و افتحها"
             )
         except UnMuteNeeded:
             return await fallen.edit_text(
