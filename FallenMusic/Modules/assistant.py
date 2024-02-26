@@ -40,7 +40,7 @@ async def set_pfp(_, message: Message):
             return await fuk.edit_text("⌔ فشل في تغيير صورة الحساب المساعد")
     else:
         await message.reply_text(
-            "⌔ لازم تعمل ريب علي الصورة 🤓"
+            "⌔ لازم تعمل رد على الصورة 🤓"
         )
 
 
@@ -73,7 +73,7 @@ async def set_bio(_, message: Message):
         return await message.reply_text(f"⌔ {ASS_MENTION} تم تغيير البايو")
     else:
         return await message.reply_text(
-            "⌔ اعمل ريب علي البايو 🤓"
+            "⌔ اعمل رد على البايو 🤓"
         )
 
 
@@ -93,5 +93,5 @@ async def set_name(_, message: Message):
         return await message.reply_text(f"⌔ {ASS_MENTION} ‌‌‌تم تغيير الاسم")
     else:
         return await message.reply_text(
-            "⌔ اعمل ريب علي الاسم 🤓"
+            "⌔ اعمل رد على الاسم 🤓"
         )
