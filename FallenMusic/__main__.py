@@ -58,7 +58,7 @@ async def fallen_startup():
     try:
         await app.send_message(
             SUNAME,
-            f"✯ 𝐃𝐀𝐑𝐊 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓 ✯\n\n𖢵 ɪᴅ : `{BOT_ID}`\n𖢵 ɴᴀᴍᴇ : {BOT_NAME}\n𖢵 ᴜsᴇʀɴᴀᴍᴇ : @{BOT_USERNAME}",
+            f"✯ تم تنصيب بوت جديد من سورس سونك بنجاح ✯\n\n𖢵 ايدي البوت : `{BOT_ID}`\n𖢵 اسم البوت : {BOT_NAME}\n𖢵 معرف البوت : @{BOT_USERNAME}",
         )
     except:
         LOGGER.error(
@@ -68,7 +68,7 @@ async def fallen_startup():
     try:
         await app2.send_message(
             SUNAME,
-            f"✯ 𝐃𝐀𝐑𝐊 𝐌𝐔𝐒𝐈𝐂 ✯\n\n𖢵 ɪᴅ : `{ASS_ID}`\n𖢵 ɴᴀᴍᴇ : {ASS_NAME}\n𖢵 ᴜsᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}",
+            f"✯ تم تنصيب الحساب المساعد على سورس سونك بنجاح ✯\n\n𖢵 ايدي الحساب : `{ASS_ID}`\n𖢵 اسم الحساب : {ASS_NAME}\n𖢵 يوزر الحساب : @{ASS_USERNAME}",
         )
     except:
         LOGGER.error(
