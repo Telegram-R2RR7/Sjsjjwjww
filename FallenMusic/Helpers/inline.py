@@ -45,7 +45,7 @@ buttons = InlineKeyboardMarkup(
             )
             ],
             [
-            InlineKeyboardButton("• سورس باور •", url=f"https://t.me/K8XXX"),
+            InlineKeyboardButton("• انمي •", url=f"https://t.me/zzwm12"),
             ],
             [
             InlineKeyboardButton(text="• المطور •", user_id=config.OWNER_ID),
@@ -63,12 +63,12 @@ pm_buttons = [
     ],
     [InlineKeyboardButton(text="• اوامࢪ التشغيل •", callback_data="fallen_help")],
     [
-        InlineKeyboardButton(text="• سوࢪس باور •", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="• انمي •", url=config.SUPPORT_CHANNEL),
         InlineKeyboardButton(text="• قناة التحديثات •", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
-            text="• مطوࢪ السورس •", url="https://t.me/znnnz"
+            text="• تنصيب بوت مماثل •", url="https://t.me/Huseenytiq"
         ),
         InlineKeyboardButton(text="• مالك البوت •", user_id=config.OWNER_ID),
     ],
@@ -83,12 +83,12 @@ gp_buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="• سوࢪس باور •", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="•  انمي •", url=config.SUPPORT_CHANNEL),
         InlineKeyboardButton(text="• قناة التحديثات •", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
-            text="• مطوࢪ السورس •", url="https://t.me/znnnz"
+            text="• تنصيب بوت مماثل •", url="https://t.me/Huseenytiq"
         ),
         InlineKeyboardButton(text="• مالك البوت •", user_id=config.OWNER_ID),
     ],
