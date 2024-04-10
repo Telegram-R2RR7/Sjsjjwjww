@@ -103,7 +103,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"⋄ تم استئناف التشغيل ⚡\n \n⋄ بواسطة : {query.from_user.mention} 🥀",
+            text=f"⋄ تم استئناف التشغيل ⚡\n \n⋄ بواسطة : {query.from_user.mention} ",
             reply_markup=close_key,
         )
 
@@ -115,7 +115,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"⋄ تم ايقاف التشغيل مؤقتاً 🥺\n \n⋄ بواسطة : {query.from_user.mention} 🥀",
+            text=f"⋄ تم ايقاف التشغيل مؤقتاً \n \n⋄ بواسطة : {query.from_user.mention} ",
             reply_markup=close_key,
         )
 
@@ -126,7 +126,7 @@ async def admin_cbs(_, query: CallbackQuery):
         except:
             pass
         await query.message.reply_text(
-            text=f"⋄ تم ايقاف التشغيل 🥺\n \n⋄ بواسطة : {query.from_user.mention}",
+            text=f"⋄ تم ايقاف التشغيل \n \n⋄ بواسطة : {query.from_user.mention}",
             reply_markup=close_key,
         )
         await query.message.delete()
@@ -138,7 +138,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"⋄ تخطي الموسيقى 🥺\n \n⋄ بواسطة : {query.from_user.mention} 🥀\n\n**⋄ لا يوجد سوره تالية في قائمة الانتظار ** {query.message.chat.title}, **ترك دردشة الفيديو**",
+                    text=f"⋄ تخطي الموسيقى \n \n⋄ بواسطة : {query.from_user.mention} \n\n**⋄ لا يوجد سوره تالية في قائمة الانتظار ** {query.message.chat.title}, **ترك دردشة الفيديو**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -166,7 +166,7 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"⋄ تم تخطي التشغيل 🥺\n \n⋄ بواسطة : {query.from_user.mention}",
+                text=f"⋄ تم تخطي التشغيل \n \n⋄ بواسطة : {query.from_user.mention}",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
