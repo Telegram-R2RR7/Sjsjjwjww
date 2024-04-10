@@ -45,7 +45,7 @@ buttons = InlineKeyboardMarkup(
             )
             ],
             [
-            InlineKeyboardButton("• انمي •", url=f"https://t.me/zzwm12"),
+            InlineKeyboardButton("• قناة المطور •", url=f"https://t.me/R125R"),
             ],
             [
             InlineKeyboardButton(text="• المطور •", user_id=config.OWNER_ID),
@@ -61,14 +61,13 @@ pm_buttons = [
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
-    [InlineKeyboardButton(text="• اوامࢪ التشغيل •", callback_data="fallen_help")],
     [
-        InlineKeyboardButton(text="• انمي •", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="• قناة المطور •", url=config.SUPPORT_CHANNEL),
         InlineKeyboardButton(text="• قناة التحديثات •", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
-            text="• تنصيب بوت مماثل •", url="https://t.me/Huseenytiq"
+            text="• تنصيب بوت مماثل •", url="https://t.me/R2RR7"
         ),
         InlineKeyboardButton(text="• مالك البوت •", user_id=config.OWNER_ID),
     ],
@@ -83,12 +82,12 @@ gp_buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="•  انمي •", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="•  قناة المطور •", url=config.SUPPORT_CHANNEL),
         InlineKeyboardButton(text="• قناة التحديثات •", url=config.SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
-            text="• تنصيب بوت مماثل •", url="https://t.me/Huseenytiq"
+            text="• تنصيب بوت مماثل •", url="https://t.me/R2RR7"
         ),
         InlineKeyboardButton(text="• مالك البوت •", user_id=config.OWNER_ID),
     ],
